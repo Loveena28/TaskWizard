@@ -1,0 +1,19 @@
+.add-task{
+  justify-content: center;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-field{
+  width: clamp(300px, 40vw, 60rem);
+}
+
+.error{
+  font-size: 12px;
+}
+.submit-button{
+  font-size: 15px;
+  width: 130px;
+  height: 40px;
+}

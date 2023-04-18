@@ -1,0 +1,30 @@
+<div style="display: flex; justify-content: center; margin-top: 1.5rem;">
+  <mat-list role="list" style="width: clamp(300px, 40vw, 60rem)">
+    <mat-list-item
+      role="listitem"
+      *ngFor="let task of tasks"
+      [ngClass]="{ completed: task.completed }"
+    >
+      <div style="width: 100%; display: flex">
+        <span>{{ task.name }}</span>
+        <div style="flex: 1 1 100%"></div>
+        <button
+          class="complete-button"
+          (click)="deleteTask(task.id)"
+          *ngIf="!task.completed"
+          mat-button
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button
+          class="delete-button"
+          (click)="completeTask(task.id)"
+          *ngIf="!task.completed"
+          mat-button
+        >
+          <mat-icon>check_circle</mat-icon>
+        </button>
+      </div>
+    </mat-list-item>
+  </mat-list>
+</div>

@@ -1,0 +1,32 @@
+<div class="add-task">
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Enter your task</mat-label>
+    <input
+      matInput
+      [formControl]="new_task"
+      #input
+      minlength="4"
+      placeholder="Task"
+    />
+    <mat-error
+      class="error"
+      *ngIf="new_task.invalid && (new_task.dirty || new_task.touched)"
+    >
+      <mat-error *ngIf="new_task.hasError('required')"
+        >*Input is required
+      </mat-error>
+      <mat-error class="error" *ngIf="new_task.hasError('minlength')"
+        >*Input must contain at least 4 characters.
+      </mat-error>
+    </mat-error>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="addTask()"
+    type="submit"
+    class="submit-button"
+  >
+    Add new task
+  </button>
+</div>

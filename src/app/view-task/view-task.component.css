@@ -1,0 +1,7 @@
+.completed {
+  text-decoration: line-through;
+}
+.complete-btn,
+.delete-btn {
+  display: none;
+}
